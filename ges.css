@@ -1975,3 +1975,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   height: auto;
   border-radius: 12px;        /* if you want soft corners */
 }
+article[data-page] {
+  display: none;
+}
+
+article[data-page].active {
+  display: block;
+}
