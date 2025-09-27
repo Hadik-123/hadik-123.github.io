@@ -2121,3 +2121,24 @@ article[data-page].active {
     width: 90%;
   }
 }
+/* ===== Keep sidebar open on small screens ===== */
+@media (max-width: 600px) {
+  /* If your theme hides the extra area by default, override it */
+  .sidebar-info_more {
+    display: block;
+    max-height: none;      /* no collapsing */
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }
+
+  /* Hide the "Show Contacts" button on phones (not needed if always open) */
+  .info_more-btn {
+    display: none;
+  }
+
+  /* Make sure the whole sidebar card grows as needed */
+  .sidebar {
+    height: auto;
+  }
+}

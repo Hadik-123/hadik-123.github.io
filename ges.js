@@ -181,3 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// Auto-expand sidebar on small screens
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    const sb = document.querySelector("[data-sidebar]");
+    if (sb && !sb.classList.contains("active")) {
+      sb.classList.add("active");
+    }
+  }
+});
+
