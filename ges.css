@@ -2142,3 +2142,48 @@ article[data-page].active {
     height: auto;
   }
 }
+/* ===== Contacts: show full text on phones ===== */
+@media (max-width: 600px) {
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* keep icon a fixed size */
+  .contact-item .icon-box {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+  }
+
+  /* allow the text block to shrink and wrap */
+  .contact-item .contact-info {
+    min-width: 0;             /* critical so long text can wrap */
+    flex: 1 1 auto;
+  }
+
+  .contact-item .contact-title {
+    margin: 0 0 4px 0;
+  }
+
+  /* remove any ellipsis/truncation, allow wrapping */
+  .contact-item .contact-link {
+    display: block;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere;  /* breaks long URLs/usernames */
+    word-break: break-word;
+    line-height: 1.35;
+    font-size: 0.95rem;
+  }
+}
