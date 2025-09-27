@@ -2187,3 +2187,32 @@ article[data-page].active {
     font-size: 0.95rem;
   }
 }
+/* --- Force contacts to show on mobile & allow wrapping --- */
+@media (max-width: 600px) {
+
+  /* Let the whole sidebar grow instead of clipping */
+  .sidebar { height: auto; }
+
+  /* Always show the hidden panel */
+  .sidebar-info_more {
+    display: block;
+    max-height: none;
+    height: auto !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    overflow: visible;
+    margin-top: 14px;
+  }
+
+  /* Hide the “Show Contacts” chevron button on mobile */
+  .info_more-btn { display: none; }
+
+  /* Make long links (email/LinkedIn/GitHub) wrap nicely */
+  .contacts-list .contact-item { align-items: flex-start; }
+  .contacts-list .contact-info { align-items: flex-start; }
+  .contacts-list .contact-link {
+    white-space: normal;
+    overflow-wrap: anywhere;  /* modern */
+    word-break: break-word;   /* fallback */
+  }
+}
