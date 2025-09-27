@@ -2022,3 +2022,23 @@ article[data-page].active {
     gap: 10px;
   }
 }
+/* --- Sidebar title text fix for mobile --- */
+.title {
+  display: block;
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word; /* wrap long words */
+  line-height: 1.4;
+  font-size: 0.9rem; /* slightly smaller */
+  text-align: center;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 600px) {
+  .info-content {
+    padding: 0 10px;
+  }
+  .title {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
