@@ -2216,3 +2216,37 @@ article[data-page].active {
     word-break: break-word;   /* fallback */
   }
 }
+/* === Fix: always show contacts on phones (no clipping) === */
+@media (max-width: 600px) {
+  .sidebar{
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .sidebar-info_more{
+    display: block !important;
+    max-height: none !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* let long lines wrap fully */
+  .contact-info{
+    max-width: 100% !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+  .contact-link{
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    line-height: 1.35;
+    font-size: 0.95rem;
+  }
+}
+
