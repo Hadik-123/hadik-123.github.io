@@ -190,47 +190,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-// === STARFIELD CANVAS ANIMATION ===
-const canvas = document.getElementById("star-canvas");
-const ctx = canvas.getContext("2d");
 
-let stars = [];
-const numStars = 300;
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-
-window.addEventListener("resize", resizeCanvas);
-
-for (let i = 0; i < numStars; i++) {
-  stars.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    z: Math.random() * canvas.width
-  });
-}
-
-function animate() {
-  ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  for (let star of stars) {
-    star.z -= 2;
-    if (star.z <= 0) star.z = canvas.width;
-
-    const k = 128 / star.z;
-    const px = (star.x - canvas.width / 2) * k + canvas.width / 2;
-    const py = (star.y - canvas.height / 2) * k + canvas.height / 2;
-
-    ctx.fillStyle = "white";
-    ctx.fillRect(px, py, 2, 2);
-  }
-
-  requestAnimationFrame(animate);
-}
-
-animate();
 
