@@ -2284,5 +2284,16 @@ article[data-page].active {
     font-size: 0.95rem;
   }
 }
+/* === FIX TOP SPACE === */
+@media (min-width: 580px) {
+  main {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+  }
+}
+
+article.about {
+  padding-top: 10px !important;
+}
 
 
